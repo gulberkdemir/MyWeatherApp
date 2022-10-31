@@ -4,6 +4,7 @@ import {ForecastService} from "./forecast.service";
 import {Forecast} from "../forecast.model";
 import {GeneralserviceService} from "../../shared/generalservice.service";
 
+
 @Component({
   selector: 'app-forecast',
   templateUrl: './forecast.component.html',
@@ -15,6 +16,7 @@ export class ForecastComponent implements OnInit, OnDestroy {
   @Input() unitSystem: string;
   @Input() cityName: string;
   finalEstimationArray : Forecast[] = []
+
 
   constructor(private forecastService: ForecastService,
               private generalService: GeneralserviceService) { }

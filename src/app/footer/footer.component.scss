@@ -1,8 +1,18 @@
+@import '../../styles/variable';
+
 .footer {
   position:fixed;
   z-index: 35;
   bottom:0;
   width:100%;
   height:2rem;   /* Height of the footer */
-  background:#6cf;
+  background: $header-and-footer-color;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.footer-text{
+
+  font-size:0.8rem;
+  padding:0 1rem;
 }
