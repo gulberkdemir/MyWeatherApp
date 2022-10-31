@@ -103,11 +103,13 @@ ul {
  * Content box
  */
 .content-box {
-  max-width: 700px;
-  padding: 0 3%;
-  margin: 4em auto;
+  height:100%;
+  margin: 0 2rem;
 }
 
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {  font-family: Roboto, "Helvetica Neue", sans-serif; }
+.data-container{
+  width: 100%;
+}

@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
 import { ErrorComponentComponent } from './error-component/error-component.component';
 import { ForecastComponent } from './weather-all/forecast/forecast.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 // @ts-ignore
@@ -30,7 +31,8 @@ import { ForecastComponent } from './weather-all/forecast/forecast.component';
     CityBoxComponent,
     NotFoundComponentComponent,
     ErrorComponentComponent,
-    ForecastComponent
+    ForecastComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
