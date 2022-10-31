@@ -1,0 +1,36 @@
+@import '../../styles/variable';
+
+.header {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 6px 0px;
+  background: #69b1d0;
+  left: 0;
+  position: sticky;
+  right: 0;
+  top: 0;
+  text-align: center;
+  z-index: 32;
+
+
+}
+
+.header__wrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 4em;
+}
+.sunny{
+  font-size: 3em;
+  margin-right: 6px;
+  color: rgb(255, 210, 48);
+}
+.header__brand{
+  font-size: 2em;
+  font-weight: 600;
+  color: #6d7b86;
+}
+
+
+

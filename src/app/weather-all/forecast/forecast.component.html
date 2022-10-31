@@ -1,0 +1,33 @@
+<div *ngIf="cityName !== undefined" class="city-card">
+  <h2 class="city-card__header">Get the today's forecast for your city!</h2>
+  <div class="city-card__box" *ngIf="finalEstimationArray.length > 0">
+    <div class="city-card__forecasts">
+      <div class="forecast" *ngIf="finalEstimationArray.length > 0">
+        <h2 class="forecast__header">Forecast for {{finalEstimationArray.length}} days</h2>
+        <ul class="forecast__list forecast__list--first-week">
+       <div class="loop" *ngFor="let estimation  of finalEstimationArray">
+         <li class="forecast-item">
+           <div class="forecast-item__date" *ngIf="!estimation.currentDay">{{estimation.date }}</div>
+<!--           <div class="forecast-item__sky-state">-->
+<!--             <span [attr.class]="iconClassname"></span>-->
+<!--           </div>-->
+           <div class="forecast-item__temperature forecast-item__temperature--day">
+    <span class="forecast-item__temperature-data" data-deg="°" >
+      {{estimation.temperatureDay}}
+    </span>
+           </div>
+           <div class="forecast-item__temperature forecast-item__temperature--night">
+    <span class="forecast-item__temperature-data" data-deg="°" >
+      {{estimation.temperatureNight}}
+    </span>
+           </div>
+           <div class="forecast-item__natural-phenomen">{{estimation.description}}</div>
+         </li>
+       </div>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+

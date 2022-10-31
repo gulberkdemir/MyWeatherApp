@@ -1,0 +1,70 @@
+@import '../../styles/variables';
+
+.search-bar {
+  max-width: 600px;
+  padding: 0 3%;
+  margin: 2.5em auto 1em auto;
+
+
+}
+
+.search-bar__box{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 3em;
+  border-bottom: 1.5px solid rgb(158, 158, 158);
+
+}
+
+.search-bar__placeholder{
+  position: absolute;
+  z-index: -1;
+  top: .5em;
+  left: 1em;
+  font-size: 1.5em;
+  font-weight: 300;
+  opacity: .3;
+}
+
+.search-bar__placeholder--hide{
+  opacity: 0;
+}
+
+.search-bar__input{
+  width: 100%;
+  font-size: 1.5em;
+  font-weight: 300;
+  margin: 0 1em;
+}
+
+.search-bar__action-btn{
+  position: relative;
+  width: 3.5em;
+}
+
+.search-bar__search-btn{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background: #fff;
+}
+
+.search-bar__search-btn--hide{
+  z-index: -10;
+  opacity: 0;
+}
+.search-bar__clean-btn{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background: #fff;
+  cursor: pointer;
+}
+.search-bar__clean-btn--hide{
+  z-index: -10;
+  opacity: 0;
+
+}

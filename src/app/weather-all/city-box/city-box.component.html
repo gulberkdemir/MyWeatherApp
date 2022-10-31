@@ -1,0 +1,78 @@
+<div *ngIf="weather.city !== undefined" class="city-card">
+  <h2 class="city-card__header">Get the today's weather for your city!</h2>
+  <div class="city-card__box">
+    <div class="city-card__updated-label">
+      last update at:
+      <span>{{weather.updateAt | date: 'HH:mm:ss'}}</span>
+    </div>
+    <div class="city-card__sky-icon">
+      <div *ngIf="weather.description.includes('cloud') || weather.description.includes('breeze')
+|| weather.description.includes('wind') || weather.description.includes('hail') || weather.description.includes('squalls')">
+        <span class='material-icons-outlined'>wb_cloudy</span>
+      </div>
+      <div *ngIf="weather.description.includes('snow') || weather.description.includes('cold')">
+        <span class="material-icons">ac_unit</span>
+      </div>
+      <div *ngIf="weather.description.includes('rain')">
+        <span class="material-icons">umbrella</span>
+      </div>
+      <div *ngIf="weather.description.includes('storm') || weather.description.includes('tornado')">
+        <span class="material-icons">storm</span>
+      </div>
+      <div *ngIf="weather.description.includes('clear') || weather.description.includes('calm')
+      || weather.description.includes('hot')">
+        <span class="material-icons">wb_sunny</span>
+      </div>
+      <div *ngIf="weather.description">
+        <span class="material-icons">storm</span>
+      </div>
+    </div>
+    <div class="city-card__temperature">
+      <span data-deg="°" [attr.data-unit]="measurementUnits">{{ weather.temp | number:'1.0-0'}}</span>
+    </div>
+    <div class="city-card__city-name" title="">
+      {{ weather.city }}
+      <div class="city-card__sky-state city-card__sky-state--city-name">
+        {{ weather.description }}
+      </div>
+    </div>
+    <div class="city-card__date-time">
+      <span class="city-card__clock">
+        <span>{{date | date:'HH:mm' }}</span>
+<!--        <app-clock></app-clock>-->
+      </span>
+      <span class="city-card__date">
+        <span>{{date | date:'EEE'}}{{','}}{{date | date:'mediumDate'}}</span>
+<!--        <app-date></app-date>-->
+      </span>
+    </div>
+    <div class="divider"></div>
+    <div class="city-card__info">
+      <div class="city-card__info-list">
+        <div class="city-card__info-list-item">
+          <strong>Wind speed:</strong> {{ weather.windSpeed }} {{'m/s' }}
+        </div>
+        <div class="city-card__info-list-item">
+          <strong>Humidity:</strong>
+          <span *ngIf="weather.humidity">{{ weather.humidity }}{{'%'}}</span>
+        </div>
+        <div class="city-card__info-list-item">
+          <strong>Pressure:</strong> {{ weather.pressure }} {{ 'mmHg' }}
+        </div>
+      </div>
+      <div class="city-card__info-list">
+        <div class="city-card__info-list-item">
+          <strong>Cloudiness:</strong> {{ weather.description }}
+        </div>
+        <div class="city-card__info-list-item">
+          <strong>Sunrise:</strong> {{ weather.sunrise | date:'HH:mm' }}
+        </div>
+        <div class="city-card__info-list-item">
+          <strong>Sunset:</strong> {{ weather.sunset | date:'HH:mm' }}</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+  </div>
+</div>
+
+
