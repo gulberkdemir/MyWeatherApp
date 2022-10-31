@@ -29,4 +29,10 @@ export class ForecastComponent implements OnInit, OnDestroy {
     this.forecastService.forecast.unsubscribe();
   }
 
+  ConverEstDate(a:number){
+    return this.generalService.GetUtcDate(a);
+
+  }
+
+
 }
