@@ -7,7 +7,7 @@ import {SearchService} from "./search.service";
   templateUrl: './weather-search-bar.component.html',
   styleUrls: ['./weather-search-bar.component.scss']
 })
-export class WeatherSearchBarComponent{
+export class WeatherSearchBarComponent implements OnInit{
 
   searchText = '';
 
@@ -15,6 +15,9 @@ export class WeatherSearchBarComponent{
     private router: Router,
     private searchService: SearchService
   ) { }
+  ngOnInit() {
+    
+  }
 
   onClickCleanBtn() {
     this.searchText = '';

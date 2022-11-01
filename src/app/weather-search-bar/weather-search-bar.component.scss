@@ -4,6 +4,10 @@
   max-width: 600px;
   padding: 0 3%;
   margin: 2.5em auto 1em auto;
+  box-shadow: 0 1px 3px #0003, 0 1px 1px #00000024, 0 2px 1px -1px #0000001f;
+  position: relative;
+  overflow: visible;
+  height: 48px;
 
 
 }
@@ -13,7 +17,7 @@
   display: flex;
   justify-content: space-between;
   height: 3em;
-  border-bottom: 1.5px solid rgb(158, 158, 158);
+  //border-bottom: 1.5px solid rgb(158, 158, 158);
 
 }
 
