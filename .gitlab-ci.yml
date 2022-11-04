@@ -1,0 +1,11 @@
+image: docker pull node:16.13.1-bullseye
+
+stages:
+  - setup
+  - test
+
+install:
+  stage: setup
+  script:
+    - npm ci
+
