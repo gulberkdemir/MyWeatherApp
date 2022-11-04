@@ -9,3 +9,9 @@ install:
   script:
     - npm ci
 
+unit-test:
+  stage: test
+  script:
+    - npm ci
+    - npm run cypress:run
+
