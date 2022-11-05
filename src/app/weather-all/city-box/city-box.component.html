@@ -8,23 +8,23 @@
     <div class="city-card__sky-icon">
       <div *ngIf="weather.description.includes('cloud') || weather.description.includes('breeze')
 || weather.description.includes('wind') || weather.description.includes('hail') || weather.description.includes('squalls')">
-        <span class='material-icons-outlined'>wb_cloudy</span>
+        <span class='material-icons-outlined cloud_icon'>wb_cloudy</span>
       </div>
       <div *ngIf="weather.description.includes('snow') || weather.description.includes('cold')">
-        <span class="material-icons">ac_unit</span>
+        <span class="material-icons snow_icon">ac_unit</span>
       </div>
       <div *ngIf="weather.description.includes('rain')">
-        <span class="material-icons">umbrella</span>
+        <span class="material-icons-outlined rain_icon">umbrella</span>
       </div>
       <div *ngIf="weather.description.includes('storm') || weather.description.includes('tornado')">
-        <span class="material-icons">storm</span>
+        <span class="material-icons storm_icon">storm</span>
       </div>
       <div *ngIf="weather.description.includes('clear') || weather.description.includes('calm')
       || weather.description.includes('hot')">
-        <span class="material-icons">wb_sunny</span>
+        <span class="material-icons sun_icon">wb_sunny</span>
       </div>
       <div *ngIf="weather.description">
-        <span class="material-icons">storm</span>
+        <span class="material-icons">nothing</span>
       </div>
     </div>
     <div class="city-card__temperature">
@@ -39,11 +39,11 @@
     <div class="city-card__date-time">
       <span class="city-card__clock">
         <span>{{date | date:'HH:mm' }}</span>
-<!--        <app-clock></app-clock>-->
+        <!--        <app-clock></app-clock>-->
       </span>
       <span class="city-card__date">
-        <span>{{date | date:'EEE'}}{{','}}{{date | date:'mediumDate'}}</span>
-<!--        <app-date></app-date>-->
+        <span>{{date | date:'EEE'}}{{', '}}{{date | date:'mediumDate'}}</span>
+        <!--        <app-date></app-date>-->
       </span>
     </div>
     <div class="divider"></div>

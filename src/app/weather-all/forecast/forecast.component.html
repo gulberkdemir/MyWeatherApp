@@ -5,25 +5,26 @@
       <div class="forecast" *ngIf="finalEstimationArray.length > 0">
         <h2 class="forecast__header">Forecast for {{finalEstimationArray.length}} days</h2>
         <ul class="forecast__list forecast__list--first-week">
-       <div class="loop" *ngFor="let estimation  of finalEstimationArray">
-         <li class="forecast-item">
-           <div class="forecast-item__date" *ngIf="!estimation.currentDay" >{{ConverEstDate(estimation.date) | date: 'shortDate'}}</div>
-<!--           <div class="forecast-item__sky-state">-->
-<!--             <span [attr.class]="iconClassname"></span>-->
-<!--           </div>-->
-           <div class="forecast-item__temperature forecast-item__temperature--day">
-    <span class="forecast-item__temperature-data" data-deg="°" >
+          <div class="loop" *ngFor="let estimation  of finalEstimationArray">
+            <li class="forecast-item">
+              <div class="forecast-item__date"
+                   *ngIf="!estimation.currentDay">{{ConverEstDate(estimation.date) | date: 'mediumDate'}}</div>
+              <!--           <div class="forecast-item__sky-state">-->
+              <!--             <span [attr.class]="iconClassname"></span>-->
+              <!--           </div>-->
+              <div class="forecast-item__temperature forecast-item__temperature--day">
+    <span class="forecast-item__temperature-data" data-deg="°">
       {{estimation.temperatureDay}}
     </span>
-           </div>
-           <div class="forecast-item__temperature forecast-item__temperature--night">
-    <span class="forecast-item__temperature-data" data-deg="°" >
+              </div>
+              <div class="forecast-item__temperature forecast-item__temperature--night">
+    <span class="forecast-item__temperature-data" data-deg="°">
       {{estimation.temperatureNight}}
     </span>
-           </div>
-           <div class="forecast-item__natural-phenomen">{{estimation.description}}</div>
-         </li>
-       </div>
+              </div>
+              <div class="forecast-item__natural-phenomen">{{estimation.description}}</div>
+            </li>
+          </div>
         </ul>
       </div>
 

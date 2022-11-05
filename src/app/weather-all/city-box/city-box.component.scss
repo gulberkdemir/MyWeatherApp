@@ -81,6 +81,22 @@
     top: 2.5em;
     left: 8%;
 
+    & .sun_icon{
+      color: rgb(255, 210, 48);
+    }
+    & .cloud_icon{
+      color: #568aac;
+    }
+    & .snow_icon{
+      color: #f1eeeb;
+    }
+     & .rain_icon{
+       color: #afcacd;
+     }
+    & .storm_icon{
+      color: #618aa3;
+    }
+
     .wi {
       font-size: 6em;
     }
