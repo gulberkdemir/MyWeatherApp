@@ -1,7 +1,7 @@
 import {AfterContentChecked, Component, DoCheck, Input, OnDestroy, OnInit} from '@angular/core';
 import {WhetherService} from "./whether.service";
 import {Weather} from "./weather.model";
-import {interval, Subscription, switchMap, take, timer} from "rxjs";
+import {catchError, interval, Subscription, switchMap, take, throwError, timer} from "rxjs";
 import {SearchService} from "../weather-search-bar/search.service";
 import {GeneralserviceService} from "../shared/generalservice.service";
 import {whetherApiConfig} from "../whether-config";
@@ -75,7 +75,7 @@ export class WeatherAllComponent implements OnInit, OnDestroy {
 
   findWeather() {
     timer(0, whetherApiConfig.updateInterval.weather).pipe(
-      switchMap(() => this.weatherService.getWeatherWithCity(this.cityResult))
+      switchMap(() => this.weatherService.getWeatherWithCity(this.cityResult)), catchError(this.handleError)
     ).subscribe(weather => {
         this.weather = weather;
         this.weatherService.adjustResponseData(this.weatherModelObject, this.weather);
@@ -103,6 +103,18 @@ export class WeatherAllComponent implements OnInit, OnDestroy {
 
       }
     );
+  }
+
+  handleError(error:any) {
+    let errorMessage = '';
+    if (error.error instanceof ErrorEvent) {
+      errorMessage = error.error.message;
+    } else {
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    window.alert(errorMessage);
+    return throwError(errorMessage);
+
   }
 
 }
